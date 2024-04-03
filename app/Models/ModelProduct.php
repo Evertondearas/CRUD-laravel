@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class ModelProduct extends Model
 {
     protected $table = 'products';
+    protected $fillable=['name', 'description', 'brand', 'price'];
 }
 

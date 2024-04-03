@@ -29,7 +29,7 @@ class productController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -37,7 +37,18 @@ class productController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cad=$this->objProduct->create([
+            
+            'name'=>$request->name,
+            'description'=>$request->description,
+            'brand'=>$request->brand,
+            'price'=>$request->price 
+        ]);
+        if($cad){
+            return redirect('products');
+        }
+        else
+        echo"Error";
     }
 
     /**
@@ -45,7 +56,8 @@ class productController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $product=$this->objProduct->find($id);
+        return view('show', compact('product'));
     }
 
     /**

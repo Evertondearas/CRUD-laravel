@@ -4,7 +4,7 @@
     <h1 class="text-center">CRUD</h1>
 
     <div class="text-center">
-    <a href="" class="text-center mt-3 mb-4">
+    <a href="{{url("products/create")}}" class="text-center mt-3 mb-4">
       <button class="btn btn-success">Cadastrar</button>
     </a>
     </div>
@@ -34,7 +34,7 @@
       <td>{{$products->brand}}</td>
       <td>R${{$products->price}}</td>
       <td>
-        <a href="">
+        <a href="{{"products/$products->id"}}">
           <button class="btn btn-dark">Vizualizar</button>
         </a>
         <a href="">
