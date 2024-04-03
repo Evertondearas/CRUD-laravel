@@ -3,15 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ModelProduct;
 
 class productController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+ 
+    private $objProduct;
+
+    public function __construct(){    	
+        $this->objProduct = new ModelProduct;
+
+    }
+
+     public function index()
     {
-        return view('index'); 
+        $product=$this->objProduct->all();
+        return view('index', compact('product')); 
     }
 
     /**
