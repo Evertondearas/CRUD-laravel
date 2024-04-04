@@ -34,19 +34,21 @@
       <td>{{$products->brand}}</td>
       <td>R${{$products->price}}</td>
       <td>
+
+      <div class="d-flex justify-content-between">
         <a href="{{"products/$products->id"}}">
-          <button class="btn btn-dark">Vizualizar</button>
+          <button class="btn btn-dark btn-sm">Vizualizar</button>
         </a>
         <a href="{{url("products/$products->id/edit")}}">
-          <button class="btn btn-primary">Editar</button>
+          <button class="btn btn-primary btn-sm">Editar</button>
         </a>
         
         <form method="POST" action="{{ route('products.destroy', $products->id) }}">
           @csrf
           @method('DELETE')
-          <button type="submit" class="btn btn-danger">Excluir</button>
+          <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
         </form>
-        
+        </div>
       </td>
     </tr>
   
