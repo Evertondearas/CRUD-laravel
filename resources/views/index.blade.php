@@ -37,7 +37,7 @@
         <a href="{{"products/$products->id"}}">
           <button class="btn btn-dark">Vizualizar</button>
         </a>
-        <a href="">
+        <a href="{{url("products/$products->id/edit")}}">
           <button class="btn btn-primary">Editar</button>
         </a>
         <a href="">

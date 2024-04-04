@@ -65,7 +65,8 @@ class productController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $product=$this->objProduct->find($id);
+        return view('create', compact('product'));
     }
 
     /**
@@ -73,7 +74,14 @@ class productController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $this->objProduct->where(['id'=>$id])->update([
+            'name'=>$request->name,
+            'description'=>$request->description,
+            'brand'=>$request->brand,
+            'price'=>$request->price 
+        
+        ]);
+        return redirect('products');
     }
 
     /**
