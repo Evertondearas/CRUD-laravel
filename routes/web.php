@@ -15,3 +15,4 @@ use App\Http\Controllers\productController;
 
 //Route::get('/', 'productController@index');
 Route::resource('/products', productController::class);
+Route::delete('/products/{id}/delete', [ProductController::class, 'destroy']);

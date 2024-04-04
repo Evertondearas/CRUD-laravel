@@ -40,9 +40,13 @@
         <a href="{{url("products/$products->id/edit")}}">
           <button class="btn btn-primary">Editar</button>
         </a>
-        <a href="">
-          <button class="btn btn-danger">Deletar</button>
-        </a>
+        
+        <form method="POST" action="{{ route('products.destroy', $products->id) }}">
+          @csrf
+          @method('DELETE')
+          <button type="submit" class="btn btn-danger">Excluir Produto</button>
+        </form>
+        
       </td>
     </tr>
   

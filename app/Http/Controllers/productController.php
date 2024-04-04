@@ -89,6 +89,7 @@ class productController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $this->objProduct->find($id)->delete();
+        return redirect('products');
     }
 }
